@@ -1,0 +1,80 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 10%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.nav-link {
+  margin-top: 0;
+}
+
+#main-doc {
+  margin-left: 10%;
+}
+
+ul header {
+  text-align: center;
+  margin-bottom: 5%;
+  font-size: 17px;
+  font-family: "Nunito", sans-serif;
+}
+
+section {
+  border: 1px solid black;
+  padding: 20px;
+  width: 100%;
+  height: fit-content;
+  margin: 10px;
+  font-family: "Nunito", sans-serif;
+  background-color: darkseagreen;
+}
+
+section header {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/*#post_game ul {
+  position: fixed;
+}
+
+#post_game li {
+  font-weight: bold;
+}
+*/
+
+@media (min-width: 1280px) {
+  #navbar {
+    position: fixed;
+  }
+}
+
+
+
+
+
+
+

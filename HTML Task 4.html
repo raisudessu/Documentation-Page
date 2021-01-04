@@ -1,0 +1,189 @@
+<head>
+  <link rel="stylesheet" href="CSS Task 4.css">
+  <nav id="navbar">
+    <ul>
+      <li><header>Hangman</header></li>
+      <li><a class="nav-link" href="#overview">Overview</a></li>
+      <li><a class="nav-link" href="#source_code">Source Code</a></li>
+      <li><a class="nav-link" href="#gameplay">Gameplay</a></li>
+      <li><a class="nav-link" href="#In_depth">In depth</a></li>
+      <li><a class="nav-link" href="#Post_game">Post game</a></li>
+    </ul>
+  </nav>
+</head>
+
+<main id="main-doc">
+
+  <section class="main-section" id="overview">
+    <header>overview</header>
+    <p> This section will be explaining on a famous word search game called "Hangman". The game will be recreated in Python programming. </p>
+    <p> The game is a good beginner practice for coders to code in Python. </p>
+    <p> The game will involve strings, loops and conditional statements (if, else, elif).</p>
+
+  </section>
+  
+  <section class="main-section" id="source_code">
+    <header>source code</header>
+    <p>The source code is taken from <a href="https://www.geeksforgeeks.org/python-program-for-word-guessing-game/">an outside source</a> so I do not own any of this. Haha xD</p>
+    <pre>
+    <code>
+      Import random
+      # library that we use in order to choose 
+      # on random words from a list of words
+ 
+      name = input("What is your name? ")
+      # Here the user is asked to enter the name first
+ 
+      print("Good Luck ! ", name)
+ 
+      words = ['rainbow', 'computer', 'science', 'programming','python', 'mathematics', 'player', 'condition','reverse', 'water', 'board', 'geeks'] 
+ 
+      # Function will choose one random
+      # word from this list of words
+    </code>
+    </pre>
+    <pre>
+    <code>
+      word = random.choice(words)
+ 
+ 
+      print("Guess the characters")
+ 
+      guesses = ''
+ 
+      # any number of turns can be used here
+      turns = 12
+    </code>
+    </pre>
+    
+    <pre>
+    <code>
+
+      while turns > 0:
+     
+      # counts the number of times a user fails
+      failed = 0
+     
+      # all characters from the input
+      # word taking one at a time.
+      for char in word: 
+         
+        # comparing that character with
+        # the character in guesses
+        if char in guesses: 
+            print(char)
+             
+        else: 
+            print("_")
+             
+            # for every failure 1 will be
+            # incremented in failure
+            failed += 1
+             
+ 
+        if failed == 0:
+        # user will win the game if failure is 0
+        # and 'You Win' will be given as output
+        print("You Win") 
+         
+        # this print the correct word
+        print("The word is: ", word) 
+        break
+    </code>
+    </pre>
+
+    <pre>
+    <code>
+      # if user has input the wrong alphabet then
+      # it will ask user to enter another alphabet
+      guess = input("guess a character:")
+     
+      # every input character will be stored in guesses 
+     guesses += guess 
+     
+      # check input with the character in word
+      if guess not in word:
+         
+        turns -= 1
+         
+        # if the character doesn’t match the word
+        # then “Wrong” will be given as output 
+        print("Wrong")
+         
+        # this will print the number of
+        # turns left for the user
+        print("You have", + turns, 'more guesses')
+         
+         
+        if turns == 0:
+            print("You Loose")
+    </code>
+    </pre>
+  </section>
+
+  <section class="main-section" id="gameplay">
+    <header>gameplay</header>
+    <p>In this game, the program will use the random function to choose one word for the current session.</p>
+    <p>First things first, name is required before we start.</p>
+    <p>Then, the player would have to guess the word based on given clue. The clue would be total number of alphabet in the word.</p>
+    <p>How many "-" will be visible based on the total alphabet. </p>
+    <p>If the player guess the right alphabet, it will be shown as the output (with correct placement) else the program will ask you to guess another alphabet.</p>
+    <p>The number of turns can be decided depending on the word's guessing difficulty. </p>
+  </section>
+
+  <section class="main-section" id="In_depth">
+    <header>In depth</header>
+    <p>This is the proposed output based on given source code.</p>
+    <pre>
+    <code>
+      What is your name? Gautam
+      Good Luck!  Gautam
+      Guess the characters
+      _
+      _
+      _
+      _
+      _
+      guess a character:g
+      g
+      _
+      _
+      _
+      _
+      guess a character:e
+      g
+      e
+      e
+      _
+      _
+      guess a character:k
+      g
+      e
+      e
+      k
+      _
+      guess a character:s
+      g
+      e
+      e
+      k
+      s
+      You Win
+      The word is:  geeks 
+    </code>
+    </pre>
+  </section>
+
+  <section class="main-section" id="Post_game">
+    <header>Post game</header>
+    <p>Quick recap on what happened so far:</p>
+    <ul>
+      <li>We covered a word guessing game called "Hangman" using Python.</li>
+      <li>The gameplay is simple. User key in his/her name, then start guessing the word from the hints on the screen. When they reach the maximum guess, it will be game over. If the user can guess it right, then it is a win for them.</li>
+      <li>This game is quite simple, using random library, condition statements and a simple python statements.</li>
+      <li>You can add more </li>
+      <li>That's it, simple right?</li>
+    </ul>
+  </section>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</main>
